@@ -1,0 +1,145 @@
+[
+  {
+    "id": "1",
+    "first_name": "Danit",
+    "password": "danit",
+    "email": "danit@test.com",
+    "selling": [
+      {
+        "id": "1mlt9j1y4wl3jnk4si",
+        "image": "http://localhost:8080/mango2.jpg",
+        "product": "mango"
+      },
+      {
+        "id": "1mlt9j14csl3jjp5dg",
+        "image": "http://localhost:8080/mango99.jpg",
+        "product": "mango"
+      },
+      {
+        "id": "101",
+        "product": "avacado",
+        "image": "http://localhost:8080/mango1.jpg"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "first_name": "Nate",
+    "last_name": "Sternberg",
+    "password": "Nate",
+    "email": "ccaley1@blogspot.com",
+    "selling": [
+      {
+        "id": "200",
+        "product": "mango",
+        "image": "http://localhost:8080/mango2.jpg"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "first_name": "Finlay",
+    "last_name": "Scritch",
+    "password": "Finlay",
+    "email": "fscritch2@gizmodo.com",
+    "selling": [
+      {
+        "id": "300",
+        "product": "mango",
+        "image": "http://localhost:8080/mango3.jpg"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "first_name": "Vladamir",
+    "last_name": "Battelle",
+    "email": "vbattelle3@constantcontact.com",
+    "selling": [
+      {
+        "id": "300",
+        "product": "avacado",
+        "image": "http://localhost:8080/mango3.jpg"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "first_name": "Constantine",
+    "last_name": "Pachmann",
+    "email": "cpachmann4@arizona.edu",
+    "selling": [
+      {
+        "id": "300",
+        "product": "avacado",
+        "image": "http://localhost:8080/mango3.jpg"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "first_name": "Pier",
+    "last_name": "Karys",
+    "email": "pkarys5@meetup.com",
+    "selling": [
+      {
+        "id": "300",
+        "product": "avacado",
+        "image": "http://localhost:8080/mango3.jpg"
+      }
+    ]
+    
+  },
+  {
+    "id": "7",
+    "first_name": "Bettina",
+    "last_name": "Blagdon",
+    "email": "bblagdon6@example.com",
+    "selling": [
+      {
+        "id": "300",
+        "product": "avacado",
+        "image": "http://localhost:8080/mango3.jpg"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "first_name": "Shannah",
+    "last_name": "O'Hone",
+    "email": "sohone7@indiatimes.com",
+    "selling": [
+      {
+        "id": "300",
+        "product": "avacado",
+        "image": "http://localhost:8080/mango3.jpg"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "first_name": "Adolf",
+    "last_name": "Ducker",
+    "email": "aducker8@stumbleupon.com",
+    "selling": [
+      {
+        "id": "300",
+        "product": "avacado",
+        "image": "http://localhost:8080/mango3.jpg"
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "first_name": "Coleman",
+    "last_name": "Hardey",
+    "email": "chardey9@yellowpages.com",
+    "selling": [
+      {
+        "id": "300",
+        "product": "avacado",
+        "image": "http://localhost:8080/mango3.jpg"
+      }
+    ]
+  }
+]
