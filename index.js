@@ -35,7 +35,9 @@ app.get("/mangos", (req, res) => {
                            first: seller.first_name,
                            last: seller.last_name,
                            productId: item.id,
-                           productImg: item.image                      
+                           productImg: item.image,
+                           itemLocation: item.location,
+                           itemType: item.type                  
                           });
       }
     });
@@ -52,10 +54,12 @@ app.get("/listing/:id", (req, res) => {
         res.json(
           {
             image: product.image,
-            product: product.product,
+            product: product.type,
             seller: seller.first_name,
             email: seller.email,
-            sellerId: seller.id
+            sellerId: seller.id,
+            itemLocation: product.location,
+
           }
         );
       }
@@ -100,15 +104,16 @@ app.put("/listing/:id", (req, res)=>{
 })
 app.post('/signin', (req, res) => {
   const sellersData = readSellers();
-  if(req.body.email === sellersData[0].email &&
-     req.body.password === sellersData[0].password){
-       let redir = {redirect: '/'}       
-       return res.json({page:redir,
-        id: sellersData[0].id})
-     }else{
-       let redir = {redirect: '/signin'}
-       return res.json(redir);
-     }
+  for(let i = 0; i < sellersData.length; i++){
+    if(req.body.email === sellersData[i].email &&
+      req.body.password === sellersData[i].password){
+        let redir = {redirect: '/'}       
+        return res.json({page:redir,
+          id: sellersData[i].id})
+    }
+  }
+  let redir = {redirect: '/signin'}
+  return res.json(redir);  
 });
 
 app.post('/register', (req, res) => {
@@ -123,7 +128,7 @@ app.post('/register', (req, res) => {
     password: password,
     selling: null
   })
-  res.json(sellersData[0])
+  res.json(sellersData[0])///////////////
 })
 
 ///post new listing
@@ -148,21 +153,30 @@ app.post('/upload', (req, res) => {
 });
 
 const upload = multer({ storage: storage }).single('file')
-////////////////////////////////////////
+//////////////////////////////////////
 app.post('/createlisting', (req, res) => {
     const sellersData = readSellers();
     let uniqid = require('uniqid');
     let newId = uniqid();
-    sellersData[0].selling.unshift(
-      {
-       id: newId,
-       image: "http://localhost:8080/"+req.body.image,
-       product: req.body.product
+
+    for(let i = 0; i < sellersData.length; i++){
+      if(req.body.sessionId === sellersData[i].id){
+        sellersData[i].selling.unshift(
+          {
+           id: newId,
+           product: "mango",//not actually used
+           image: "http://localhost:8080/"+req.body.image,
+           type: req.body.species,
+           location: "Miami"
+          }
+        ) 
+        break;
       }
-    )
+    }
     const strigifiedData = JSON.stringify(sellersData)
     fs.writeFileSync('./data/sellers.json', strigifiedData);
-    res.sendStatus(200);
+    // res.sendStatus(200);
+    res.json(sellersData)
 })
 
 app.listen(PORT, ()=> {
