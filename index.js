@@ -57,6 +57,7 @@ app.get("/listing/:id", (req, res) => {
             product: product.type,
             seller: seller.first_name,
             email: seller.email,
+            phone: seller.phone,
             sellerId: seller.id,
             itemLocation: product.location,
 
@@ -94,7 +95,8 @@ app.put("/listing/:id", (req, res)=>{
     let sellingData = seller.selling;
     sellingData.forEach((product) => {
       if (product.id === idFromURL) {
-          seller.email = req.body.email
+          seller.email = req.body.email;
+          seller.phone = req.body.phone;
           const strigifiedData = JSON.stringify(sellersData)
           fs.writeFileSync('./data/sellers.json', strigifiedData);
           res.json(sellersData);
